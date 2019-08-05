@@ -1,9 +1,9 @@
 # My angular project
 Hi, this is my angular project
 
-## instruction
+## Instruction
 The project is in demo folder
 
-## credential
+## Login Credentials
 User name is johnsnow
 password is dummy
