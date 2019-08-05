@@ -1,0 +1,25 @@
+<div class="container">
+  <br />
+  <h1>List of vegetables</h1>
+  <br />
+  <!-- <div class="container"> -->
+    <div class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Description</th>
+          <th>Veg's Sold?</th>
+          <th>Expiry date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vegtrack of vegtracks">
+          <td>{{ vegtrack.id }}</td>
+          <td>{{ vegtrack.description }}</td>
+          <td>{{ vegtrack.done }}</td>
+          <td>{{ vegtrack.targetDate | date | uppercase }}</td>
+        </tr>
+      </tbody>
+    </div>
+  <!-- </div> -->
+</div>
