@@ -6,19 +6,44 @@
 
     <div class="container">
       <ul class="navbar-nav">
-        <li><a routerLink="/welcome/vegtrack" class="nav-link">Home</a></li>
-        <li><a routerLink="/vegtrack" class="nav-link">VegTrack</a></li>
+        <li>
+          <a
+            *ngIf="hardcodedAuthenticationService.isUserLoggedIn()"
+            routerLink="/welcome/vegtrack"
+            class="nav-link"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            *ngIf="hardcodedAuthenticationService.isUserLoggedIn()"
+            routerLink="/vegtrack"
+            class="nav-link"
+            >VegTrack</a
+          >
+        </li>
       </ul>
     </div>
 
     <ul class="navbar-nav navbar-collapse justify-content-end">
-        <li><a routerLink="/login" class="nav-link">Login</a></li>
-        <li><a routerLink="/logout" class="nav-link">Logout</a></li>
+      <li>
+        <a
+          *ngIf="!hardcodedAuthenticationService.isUserLoggedIn()"
+          routerLink="/login"
+          routerLink="/login"
+          class="nav-link"
+          >Login</a
+        >
+      </li>
+      <li>
+        <a
+          *ngIf="hardcodedAuthenticationService.isUserLoggedIn()"
+          routerLink="/logout"
+          routerLink="/logout"
+          class="nav-link"
+          >Logout</a
+        >
+      </li>
     </ul>
   </nav>
 </header>
-<!-- *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" 
-  *ngIf="hardcodedAuthenticationService.isUserLoggedIn()"  
-  *ngIf="!hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/login"
-  *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/logout"
- -->

@@ -11,14 +11,14 @@ export class LoginComponent implements OnInit {
   password = "";
   invalidLogin = false;
   errorMessage = "Invalid User Credentials";
-  constructor(private router:Router, private hardcodedAuthenticationService: HardcodedAuthenticationService ) { }
+  constructor(private router: Router, private hardcodedAuthenticationService: HardcodedAuthenticationService) { }
 
   ngOnInit() {
   }
   handleLogin() {
     //if (this.username === "johnsnow" && this.password === "dummy") {
-      if (this.hardcodedAuthenticationService.authenticate(this.username, this.password)) {
-     this.router.navigate(['welcome', this.username])
+    if (this.hardcodedAuthenticationService.authenticate(this.username, this.password)) {
+      this.router.navigate(['welcome', this.username])
       this.invalidLogin = false;
     } else {
       this.invalidLogin = true;
