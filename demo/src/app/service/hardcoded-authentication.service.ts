@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class HardcodedAuthenticationService {
 
   constructor() { }
-  authenticate(username, password) {
+  authenticate({ username, password }: { username: string; password: string; }) {
     if (username === "johnsnow" && password === 'dummy') {
       sessionStorage.setItem('authenticaterUser', username);
       return true;
